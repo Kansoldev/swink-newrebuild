@@ -6,4 +6,8 @@
   body {
     background-color: #e9e6ed;
   }
+
+  section + section {
+    @apply mt-32;
+  }
 }
