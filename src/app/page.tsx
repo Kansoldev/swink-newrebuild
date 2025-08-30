@@ -166,7 +166,7 @@ export default function Page() {
               </div>
 
               <div
-                className={`relative min-h-[400px] lg:w-[300px] lg:min-h-[300px] ${
+                className={`relative min-h-[250px] min-[500px]:min-h-[440px] lg:w-[300px] lg:min-h-[300px] ${
                   index % 2 !== 0 ? "lg:order-1" : "lg:order-2"
                 }`}
               >
