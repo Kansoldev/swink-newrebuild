@@ -18,6 +18,34 @@ const features = [
   },
 ];
 
+const products = [
+  {
+    title: "Swink Vote",
+    description: "Run elections that are transparent and verifiable",
+    image: "/product-1.png",
+    tags: ["Multiple voting models", "Verifiable receipts", "Instant results"],
+  },
+  {
+    title: "Swink Pay",
+    description: "Send and receive money with ease using simple Swink IDs",
+    image: "/product-1.png",
+    tags: ["Instant transfers", "Low fees", "Global reach"],
+  },
+  {
+    title: "Swink Scan",
+    description:
+      "Transparency at your fingertips - explore the Swink Ecosystem",
+    image: "/product-1.png",
+    tags: ["Audit elections", "Track payments", "Public records"],
+  },
+  {
+    title: "Swink ID",
+    description: "Your digital passport across the entire Swink ecosystem",
+    image: "/product-2.png",
+    tags: ["Multiple voting models", "Verifiable receipts", "Instant results"],
+  },
+];
+
 export default function Page() {
   return (
     <main>
@@ -94,6 +122,63 @@ export default function Page() {
               </article>
             ))}
           </div>
+        </div>
+      </section>
+
+      <section>
+        <h2 className="text-5xl text-center font-extrabold mb-4">
+          Core Products
+        </h2>
+
+        <div className="max-w-5xl mx-auto px-6">
+          {products.map((product, index) => (
+            <article
+              key={index}
+              className={`flex flex-col lg:flex-row justify-between bg-white mt-10 rounded-3xl p-6 ${
+                index % 2 !== 0 ? "lg:gap-12" : ""
+              } `}
+            >
+              <div
+                className={`${
+                  index % 2 !== 0 ? "order-1 lg:order-2" : "order-2 lg:order-1"
+                } mt-7 lg:mt-0 flex-1`}
+              >
+                <h3 className="text-4xl font-bold mt-8">{product.title}</h3>
+                <p className="mt-5 text-lg">{product.description}</p>
+                <div className="tags flex flex-wrap gap-4 mt-5">
+                  {product.tags.map((tag, id) => (
+                    <span
+                      key={id}
+                      className="bg-gray-200 p-3 rounded-2xl text-sm"
+                    >
+                      {tag}
+                    </span>
+                  ))}
+                </div>
+
+                <button
+                  className={`${
+                    index === 1 || index === 2 ? "bg-[#bbb3c7]" : "bg-blue-600"
+                  } text-white text-lg font-light rounded-full mt-14 px-10 py-3`}
+                >
+                  {index === 1 || index === 2 ? "Coming Soon" : "Chat with us"}
+                </button>
+              </div>
+
+              <div
+                className={`relative min-h-[400px] lg:w-[300px] lg:min-h-[300px] ${
+                  index % 2 !== 0 ? "lg:order-1" : "lg:order-2"
+                }`}
+              >
+                <Image
+                  src={product.image}
+                  className="lg:mx-auto object-cover"
+                  fill
+                  alt=""
+                />
+              </div>
+            </article>
+          ))}
         </div>
       </section>
     </main>
