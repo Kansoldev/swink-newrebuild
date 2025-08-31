@@ -91,7 +91,7 @@ export default function Page() {
       <section>
         <div className="container mx-auto px-6 md:px-3 lg:px-6">
           <div className="text-center">
-            <h2 className="text-3xl md:text-5xl font-bold mb-4">
+            <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Swink makes trust visible
             </h2>
 
