@@ -27,7 +27,7 @@ const Header = () => {
               src="/mail.png"
               width={30}
               height={30}
-              className="hidden md:block object-cover"
+              className="hidden w-full md:block object-cover"
               alt=""
             />
           </a>
@@ -37,7 +37,7 @@ const Header = () => {
               src="/twitter.png"
               width={30}
               height={30}
-              className="hidden md:block object-cover"
+              className="hidden w-full md:block object-cover"
               alt=""
             />
           </a>
