@@ -20,6 +20,12 @@ const features = [
 
 const products = [
   {
+    title: "Swink ID",
+    description: "Your digital passport across the entire Swink ecosystem",
+    image: "/product-2.png",
+    tags: ["Multiple voting models", "Verifiable receipts", "Instant results"],
+  },
+  {
     title: "Swink Vote",
     description: "Run elections that are transparent and verifiable",
     image: "/product-1.png",
@@ -37,12 +43,6 @@ const products = [
       "Transparency at your fingertips - explore the Swink Ecosystem",
     image: "/product-1.png",
     tags: ["Audit elections", "Track payments", "Public records"],
-  },
-  {
-    title: "Swink ID",
-    description: "Your digital passport across the entire Swink ecosystem",
-    image: "/product-2.png",
-    tags: ["Multiple voting models", "Verifiable receipts", "Instant results"],
   },
 ];
 
@@ -126,7 +126,7 @@ export default function Page() {
       </section>
 
       <section>
-        <h2 className="text-5xl text-center font-extrabold mb-4">
+        <h2 className="text-4xl md:text-5xl text-center font-extrabold mb-4">
           Core Products
         </h2>
 
