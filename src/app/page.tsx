@@ -89,7 +89,7 @@ export default function Page() {
       </section>
 
       <section>
-        <div className="container mx-auto px-6 md:px-3 lg:px-6">
+        <div className="container mx-auto px-6 md:px-0">
           <div className="text-center">
             <h2 className="text-4xl md:text-5xl font-bold mb-4">
               Swink makes trust visible
@@ -130,7 +130,7 @@ export default function Page() {
           Core Products
         </h2>
 
-        <div className="max-w-5xl mx-auto px-6">
+        <div className="container mx-auto px-6">
           {products.map((product, index) => (
             <article
               key={index}
