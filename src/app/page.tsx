@@ -46,6 +46,29 @@ const products = [
   },
 ];
 
+const groups = [
+  {
+    title: "Communities",
+    description: "Student unions, local groups",
+    image: "/community.png",
+  },
+  {
+    title: "Organizations",
+    description: "DAOs, NGOs, Companies",
+    image: "/organizations.png",
+  },
+  {
+    title: "Nations",
+    description: "Civic Institutions, Governments",
+    image: "/nations.png",
+  },
+  {
+    title: "Individuals",
+    description: "Everyday people",
+    image: "/people.png",
+  },
+];
+
 export default function Page() {
   return (
     <main>
@@ -179,6 +202,35 @@ export default function Page() {
               </div>
             </article>
           ))}
+        </div>
+      </section>
+
+      <section>
+        <div className="container mx-auto px-6">
+          <h2 className="text-4xl md:text-5xl text-center font-extrabold mb-4">
+            Swink is for everyone who needs trust
+          </h2>
+
+          <div className="flex flex-col md:flex-row justify-around gap-4 lg:gap-7 my-10">
+            {groups.map((group, index) => (
+              <div key={index} className="flex-1">
+                <div className="rounded-2xl overflow-hidden">
+                  <Image
+                    src={group.image}
+                    alt=""
+                    className="object-cover w-full h-full"
+                    width={400}
+                    height={400}
+                  />
+                </div>
+
+                <div>
+                  <h3 className="text-2xl mt-5 font-bold">{group.title}</h3>
+                  <p className="mt-2">{group.description}</p>
+                </div>
+              </div>
+            ))}
+          </div>
         </div>
       </section>
     </main>
