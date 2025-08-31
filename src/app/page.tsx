@@ -233,6 +233,36 @@ export default function Page() {
           </div>
         </div>
       </section>
+
+      <section>
+        <div className="container mx-auto">
+          <div
+            className="bg-[#1a0047] text-center mx-auto rounded-3xl pt-20 pb-5 px-4 bg-cover bg-no-repeat bg-center"
+            style={{ backgroundImage: "url('/pattern.png')" }}
+          >
+            <h2 className="text-4xl md:text-6xl font-bold text-white mt-16">
+              Be part of the future of trust
+            </h2>
+
+            <p className="my-5 text-lg text-[#ffffffe3] md:w-2/3 lg:w-1/3 md:mx-auto">
+              Join our early community of builders, voters, and changemakers
+              shaping Swink from day one.
+            </p>
+
+            <button className="py-3 px-10 text-white text-lg rounded-2xl bg-blue-600 font-medium">
+              Speak to us
+            </button>
+
+            <div className="mt-32 flex items-center justify-center gap-2">
+              <span className="uppercase text-white font-semibold tracking-[3px]">
+                Trusted by
+              </span>
+
+              <img src="/Web3Nigeria - light.png" alt="" />
+            </div>
+          </div>
+        </div>
+      </section>
     </main>
   );
 }
