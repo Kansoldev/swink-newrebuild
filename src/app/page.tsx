@@ -235,11 +235,8 @@ export default function Page() {
       </section>
 
       <section>
-        <div className="container mx-auto">
-          <div
-            className="bg-[#1a0047] text-center mx-auto rounded-3xl pt-20 pb-5 px-4 bg-cover bg-no-repeat bg-center"
-            style={{ backgroundImage: "url('/pattern.png')" }}
-          >
+        <div className="container mx-auto px-6">
+          <div className="bg-[#1a0047] text-center mx-auto rounded-3xl pt-20 pb-5 px-4 bg-cover bg-no-repeat bg-center bg-[url('/pattern-mobile.png')] lg:bg-[url('/pattern.png')]">
             <h2 className="text-4xl md:text-6xl font-bold text-white mt-16">
               Be part of the future of trust
             </h2>
