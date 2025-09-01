@@ -101,14 +101,13 @@ export default function Page() {
           </div>
         </div>
 
-        <div className="relative max-w-full w-screen h-[200px]">
-          <Image
-            src={"/features.png"}
-            className="object-cover"
-            alt="Image showing swink features"
-            fill
-          />
-        </div>
+        <Image
+          src="/features.png"
+          className="w-full object-cover"
+          width={1000}
+          height={200}
+          alt="Image showing swink features"
+        />
       </section>
 
       <section>
