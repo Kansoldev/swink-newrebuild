@@ -211,7 +211,7 @@ export default function Page() {
             Swink is for everyone who needs trust
           </h2>
 
-          <div className="flex flex-col md:flex-row justify-around gap-4 lg:gap-7 my-10">
+          <div className="flex flex-col md:flex-row justify-around gap-8 lg:gap-7 my-10">
             {groups.map((group, index) => (
               <div key={index} className="flex-1">
                 <div className="rounded-2xl overflow-hidden">
