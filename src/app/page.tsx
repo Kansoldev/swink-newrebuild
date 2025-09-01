@@ -74,7 +74,7 @@ export default function Page() {
     <main>
       <section>
         <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center mx-auto text-center pt-20 md:3/4">
+          <div className="flex flex-col items-center mx-auto text-center md:pt-20 md:3/4">
             <h1 className="text-[3.2rem] min-[640px]:text-[4.5rem] lg:text-6xl leading-tight font-extrabold text-[#130724]">
               Unifying Voting & Finance
             </h1>
@@ -92,7 +92,7 @@ export default function Page() {
 
             <div className="relative w-[250px] h-[250px] mx-auto mt-10 mb-14">
               <Image
-                src={"/hero-image.png"}
+                src="/hero-image.png"
                 alt="Image showing unified voting"
                 className="object-contain"
                 fill
