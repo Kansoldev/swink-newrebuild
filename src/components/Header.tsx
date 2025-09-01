@@ -7,13 +7,7 @@ const Header = () => {
       <div className="flex justify-between items-center">
         <div className="logo">
           <Link href="/">
-            <Image
-              src="/logo.png"
-              width={120}
-              height={120}
-              className="object-contain"
-              alt="Swink logo"
-            />
+            <Image src="/logo.svg" width={120} height={120} alt="swink logo" />
           </Link>
         </div>
 
