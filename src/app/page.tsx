@@ -86,7 +86,7 @@ export default function Page() {
             </p>
 
             <button className="flex items-center gap-5 py-1 pl-1 pr-8 bg-[#0E021D] text-white text-xl rounded-2xl">
-              <Image src="/icon.png" width={50} height={50} alt="" /> Speak to
+              <Image src="/icon.svg" width={50} height={50} alt="" /> Speak to
               us
             </button>
 
