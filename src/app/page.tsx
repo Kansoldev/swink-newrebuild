@@ -245,16 +245,16 @@ export default function Page() {
               shaping Swink from day one.
             </p>
 
-            <button className="py-3 px-10 text-white text-lg rounded-2xl bg-blue-600 font-medium">
+            <button className="py-3 px-10 text-white text-lg rounded-2xl bg-blue-600 font-medium mb-32">
               Speak to us
             </button>
 
-            <div className="mt-32 flex items-center justify-center gap-2">
+            <div className="hidden md:flex items-center justify-center gap-2">
               <span className="uppercase text-white font-semibold tracking-[3px]">
                 Trusted by
               </span>
 
-              <img src="/Web3Nigeria - light.png" alt="" />
+              <Image src="/web3nigeria - light.svg" width={80} height={80} alt="" />
             </div>
           </div>
         </div>
