@@ -4,17 +4,17 @@ const features = [
   {
     heading: "Tamper-proof elections",
     desc: "With instant verifiable results",
-    icon: "/politics-vote.png",
+    icon: "/politics-vote.svg",
   },
   {
     heading: "Simple payments",
     desc: "Powered by Swink ID's, not complex wallet strings",
-    icon: "/payment-recieve.png",
+    icon: "/payment-recieve.svg",
   },
   {
     heading: "One digital identity",
     desc: "For voting, finance, and transparency",
-    icon: "/id-verified.png",
+    icon: "/id-verified.svg",
   },
 ];
 
