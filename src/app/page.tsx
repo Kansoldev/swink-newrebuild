@@ -216,10 +216,10 @@ export default function Page() {
                 <div className="rounded-2xl overflow-hidden">
                   <Image
                     src={group.image}
+                    className="object-cover w-full"
+                    width={300}
+                    height={300}
                     alt=""
-                    className="object-cover w-full h-full"
-                    width={400}
-                    height={400}
                   />
                 </div>
 
@@ -254,7 +254,12 @@ export default function Page() {
                 Trusted by
               </span>
 
-              <Image src="/web3nigeria - light.svg" width={80} height={80} alt="" />
+              <Image
+                src="/web3nigeria - light.svg"
+                width={80}
+                height={80}
+                alt=""
+              />
             </div>
           </div>
         </div>
