@@ -18,20 +18,20 @@ const Header = () => {
 
           <a href="#">
             <Image
-              src="/mail.png"
+              src="/mail-2.svg"
               width={30}
               height={30}
-              className="hidden w-full md:block object-cover"
+              className="hidden md:block object-cover"
               alt=""
             />
           </a>
 
           <a href="#">
             <Image
-              src="/twitter.png"
+              src="/twitter.svg"
               width={30}
               height={30}
-              className="hidden w-full md:block object-cover"
+              className="hidden md:block object-cover"
               alt=""
             />
           </a>
