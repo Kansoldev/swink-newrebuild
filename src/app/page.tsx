@@ -272,7 +272,10 @@ export default function Page() {
                 shaping Swink from day one.
               </p>
 
-              <button className="py-3 px-10 text-white text-lg rounded-2xl bg-blue-600 font-medium mb-32">
+              <button
+                className="py-3 px-10 text-white text-lg rounded-2xl bg-blue-600 font-medium mb-32"
+                onClick={handleOpen}
+              >
                 Speak to us
               </button>
 
