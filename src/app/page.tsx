@@ -24,18 +24,21 @@ const products = [
     description: "Your digital passport across the entire Swink ecosystem",
     image: "/product-2.png",
     tags: ["Multiple voting models", "Verifiable receipts", "Instant results"],
+    buttonText: "Claim Swink ID",
   },
   {
     title: "Swink Vote",
     description: "Run elections that are transparent and verifiable",
     image: "/product-1.png",
     tags: ["Multiple voting models", "Verifiable receipts", "Instant results"],
+    buttonText: "Chat with us",
   },
   {
     title: "Swink Pay",
     description: "Send and receive money with ease using simple Swink IDs",
     image: "/product-1.png",
     tags: ["Instant transfers", "Low fees", "Global reach"],
+    buttonText: "Coming Soon",
   },
   {
     title: "Swink Scan",
@@ -43,6 +46,7 @@ const products = [
       "Transparency at your fingertips - explore the Swink Ecosystem",
     image: "/product-1.png",
     tags: ["Audit elections", "Track payments", "Public records"],
+    buttonText: "Coming Soon",
   },
 ];
 
@@ -179,11 +183,13 @@ export default function Page() {
                 </div>
 
                 <button
-                  className={`${
-                    index === 1 || index === 2 ? "bg-[#bbb3c7]" : "bg-blue-600"
-                  } text-white text-lg font-light rounded-full mt-14 px-10 py-3`}
+                  className={`text-white text-lg font-light rounded-full mt-14 px-10 py-3 ${
+                    product.buttonText === "Coming Soon"
+                      ? "bg-[#bbb3c7]"
+                      : "bg-blue-600"
+                  }`}
                 >
-                  {index === 1 || index === 2 ? "Coming Soon" : "Chat with us"}
+                  {product.buttonText}
                 </button>
               </div>
 
