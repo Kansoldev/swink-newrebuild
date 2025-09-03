@@ -22,29 +22,29 @@ const Footer = () => {
             </div>
 
             <div className="social-profiles flex mt-8 gap-3">
-              <div className="bg-white p-3 rounded-xl flex items-center justify-center">
-                <Link href="">
+              <Link href="">
+                <div className="bg-white p-3 rounded-xl flex items-center justify-center">
                   <Image src="/mail.svg" width={25} height={25} alt="" />
-                </Link>
-              </div>
+                </div>
+              </Link>
 
-              <div className="bg-white p-3 rounded-xl flex items-center justify-center">
-                <Link href="">
+              <Link href="">
+                <div className="bg-white p-3 rounded-xl flex items-center justify-center">
                   <Image src="/x.svg" width={25} height={25} alt="" />
-                </Link>
-              </div>
+                </div>
+              </Link>
 
-              <div className="bg-white p-3 rounded-xl flex items-center justify-center">
-                <Link href="">
+              <Link href="">
+                <div className="bg-white p-3 rounded-xl flex items-center justify-center">
                   <Image src="/telegram.svg" width={25} height={25} alt="" />
-                </Link>
-              </div>
+                </div>
+              </Link>
 
-              <div className="bg-white p-3 rounded-xl flex items-center justify-center">
-                <Link href="">
+              <Link href="">
+                <div className="bg-white p-3 rounded-xl flex items-center justify-center">
                   <Image src="/linkedin.svg" width={25} height={25} alt="" />
-                </Link>
-              </div>
+                </div>
+              </Link>
             </div>
           </div>
         </div>
