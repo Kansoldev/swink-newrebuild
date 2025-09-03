@@ -1,4 +1,8 @@
+"use client";
+
 import Image from "next/image";
+import { useState } from "react";
+import Modal from "@/components/ui/Modal";
 
 const features = [
   {
@@ -74,202 +78,221 @@ const groups = [
 ];
 
 export default function Page() {
+  const [showModal, setShowModal] = useState(false);
+
+  function handleOpen() {
+    setShowModal(true);
+  }
+
+  function handleClose() {
+    setShowModal(false);
+  }
+
   return (
-    <main>
-      <section>
-        <div className="container mx-auto px-6">
-          <div className="flex flex-col items-center mx-auto text-center md:pt-20 md:3/4">
-            <h1 className="text-[3.2rem] min-[640px]:text-[4.5rem] lg:text-6xl leading-tight font-extrabold text-[#130724]">
-              Unifying Voting & Finance
-            </h1>
+    <>
+      <main>
+        <section>
+          <div className="container mx-auto px-6">
+            <div className="flex flex-col items-center mx-auto text-center md:pt-20 md:3/4">
+              <h1 className="text-[3.2rem] min-[640px]:text-[4.5rem] lg:text-6xl leading-tight font-extrabold text-[#130724]">
+                Unifying Voting & Finance
+              </h1>
 
-            <p className="text-[#130724] text-xl my-5">
-              A frictionless ecosystem designed to make trustless voting{" "}
-              <br className="hidden md:block" /> and financial freedom
-              accessible to anyone
-            </p>
+              <p className="text-[#130724] text-xl my-5">
+                A frictionless ecosystem designed to make trustless voting{" "}
+                <br className="hidden md:block" /> and financial freedom
+                accessible to anyone
+              </p>
 
-            <button className="flex items-center gap-5 py-1 pl-1 pr-8 bg-[#0E021D] text-white text-xl rounded-2xl">
-              <Image src="/icon.svg" width={50} height={50} alt="" /> Speak to
-              us
-            </button>
-
-            <div className="relative w-[250px] h-[250px] mx-auto mt-10 mb-14">
-              <Image
-                src="/hero-image.png"
-                alt="Image showing unified voting"
-                className="object-contain"
-                fill
-              />
-            </div>
-          </div>
-        </div>
-
-        <Image
-          src="/features.png"
-          className="w-full object-cover"
-          width={1000}
-          height={200}
-          alt="Image showing swink features"
-        />
-      </section>
-
-      <section>
-        <div className="container mx-auto px-6 md:px-0">
-          <div className="text-center">
-            <h2 className="text-4xl md:text-5xl font-bold mb-4">
-              Swink makes trust visible
-            </h2>
-
-            <p className="lg:w-1/2 mx-auto text-lg">
-              Built on Base L2, Swink brings secure, auditable, and
-              human-readable governance together with simple, borderless
-              payments.
-            </p>
-          </div>
-
-          <div className="flex flex-wrap flex-col md:flex-row gap-10 md:gap-7 xl:gap-0 lg:justify-around my-10">
-            {features.map((feature, index) => (
-              <article
-                key={index}
-                className="bg-[#e5dcef] text-center px-4 pt-5 md:pt-9 pb-14 rounded-2xl lg:w-[30%]"
+              <button
+                className="flex items-center gap-5 py-1 pl-1 pr-8 bg-[#0E021D] text-white text-xl rounded-2xl"
+                onClick={handleOpen}
               >
-                <div className="w-[120px] h-[155px] bg-[#D9C1F3] mx-auto rounded-full p-2">
-                  <div className="flex items-center justify-center w-[90px] h-[90px] bg-gradient-to-b from-[#a247ff73] to-[#c893ffa6] mx-auto rounded-full">
-                    <Image src={feature.icon} width={60} height={60} alt="" />
-                  </div>
-                </div>
+                <Image src="/icon.svg" width={50} height={50} alt="" /> Speak to
+                us
+              </button>
 
-                <h3 className="mb-3 text-2xl mt-6 font-bold">
-                  {feature.heading}
-                </h3>
-
-                <p>{feature.desc}</p>
-              </article>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      <section>
-        <h2 className="text-4xl md:text-5xl text-center font-extrabold mb-4">
-          Core Products
-        </h2>
-
-        <div className="container mx-auto px-6">
-          {products.map((product, index) => (
-            <article
-              key={index}
-              className={`flex flex-col lg:flex-row justify-between bg-white mt-10 rounded-3xl p-6 ${
-                index % 2 !== 0 ? "lg:gap-12" : ""
-              } `}
-            >
-              <div
-                className={`${
-                  index % 2 !== 0 ? "order-1 lg:order-2" : "order-2 lg:order-1"
-                } mt-7 lg:mt-0 flex-1`}
-              >
-                <h3 className="text-4xl font-bold mt-8">{product.title}</h3>
-                <p className="mt-5 text-lg">{product.description}</p>
-                <div className="tags flex flex-wrap gap-4 mt-5">
-                  {product.tags.map((tag, id) => (
-                    <span
-                      key={id}
-                      className="bg-gray-200 p-3 rounded-2xl text-sm"
-                    >
-                      {tag}
-                    </span>
-                  ))}
-                </div>
-
-                <button
-                  className={`text-white text-lg font-light rounded-full mt-14 px-10 py-3 ${
-                    product.buttonText === "Coming Soon"
-                      ? "bg-[#bbb3c7]"
-                      : "bg-blue-600"
-                  }`}
-                >
-                  {product.buttonText}
-                </button>
-              </div>
-
-              <div
-                className={`relative min-h-[250px] min-[500px]:min-h-[440px] lg:w-[300px] lg:min-h-[300px] ${
-                  index % 2 !== 0 ? "lg:order-1" : "lg:order-2"
-                }`}
-              >
+              <div className="relative w-[250px] h-[250px] mx-auto mt-10 mb-14">
                 <Image
-                  src={product.image}
-                  className="lg:mx-auto object-cover"
+                  src="/hero-image.png"
+                  alt="Image showing unified voting"
+                  className="object-contain"
                   fill
-                  alt=""
                 />
               </div>
-            </article>
-          ))}
-        </div>
-      </section>
+            </div>
+          </div>
 
-      <section>
-        <div className="container mx-auto px-6">
+          <Image
+            src="/features.png"
+            className="w-full object-cover"
+            width={1000}
+            height={200}
+            alt="Image showing swink features"
+          />
+        </section>
+
+        <section>
+          <div className="container mx-auto px-6 md:px-0">
+            <div className="text-center">
+              <h2 className="text-4xl md:text-5xl font-bold mb-4">
+                Swink makes trust visible
+              </h2>
+
+              <p className="lg:w-1/2 mx-auto text-lg">
+                Built on Base L2, Swink brings secure, auditable, and
+                human-readable governance together with simple, borderless
+                payments.
+              </p>
+            </div>
+
+            <div className="flex flex-wrap flex-col md:flex-row gap-10 md:gap-7 xl:gap-0 lg:justify-around my-10">
+              {features.map((feature, index) => (
+                <article
+                  key={index}
+                  className="bg-[#e5dcef] text-center px-4 pt-5 md:pt-9 pb-14 rounded-2xl lg:w-[30%]"
+                >
+                  <div className="w-[120px] h-[155px] bg-[#D9C1F3] mx-auto rounded-full p-2">
+                    <div className="flex items-center justify-center w-[90px] h-[90px] bg-gradient-to-b from-[#a247ff73] to-[#c893ffa6] mx-auto rounded-full">
+                      <Image src={feature.icon} width={60} height={60} alt="" />
+                    </div>
+                  </div>
+
+                  <h3 className="mb-3 text-2xl mt-6 font-bold">
+                    {feature.heading}
+                  </h3>
+
+                  <p>{feature.desc}</p>
+                </article>
+              ))}
+            </div>
+          </div>
+        </section>
+
+        <section>
           <h2 className="text-4xl md:text-5xl text-center font-extrabold mb-4">
-            Swink is for everyone who needs trust
+            Core Products
           </h2>
 
-          <div className="flex flex-col md:flex-row justify-around gap-8 lg:gap-7 my-10">
-            {groups.map((group, index) => (
-              <div key={index} className="flex-1">
-                <div className="rounded-2xl overflow-hidden">
+          <div className="container mx-auto px-6">
+            {products.map((product, index) => (
+              <article
+                key={index}
+                className={`flex flex-col lg:flex-row justify-between bg-white mt-10 rounded-3xl p-6 ${
+                  index % 2 !== 0 ? "lg:gap-12" : ""
+                } `}
+              >
+                <div
+                  className={`${
+                    index % 2 !== 0
+                      ? "order-1 lg:order-2"
+                      : "order-2 lg:order-1"
+                  } mt-7 lg:mt-0 flex-1`}
+                >
+                  <h3 className="text-4xl font-bold mt-8">{product.title}</h3>
+                  <p className="mt-5 text-lg">{product.description}</p>
+                  <div className="tags flex flex-wrap gap-4 mt-5">
+                    {product.tags.map((tag, id) => (
+                      <span
+                        key={id}
+                        className="bg-gray-200 p-3 rounded-2xl text-sm"
+                      >
+                        {tag}
+                      </span>
+                    ))}
+                  </div>
+
+                  <button
+                    className={`text-white text-lg font-light rounded-full mt-14 px-10 py-3 ${
+                      product.buttonText === "Coming Soon"
+                        ? "bg-[#bbb3c7]"
+                        : "bg-blue-600"
+                    }`}
+                  >
+                    {product.buttonText}
+                  </button>
+                </div>
+
+                <div
+                  className={`relative min-h-[250px] min-[500px]:min-h-[440px] lg:w-[300px] lg:min-h-[300px] ${
+                    index % 2 !== 0 ? "lg:order-1" : "lg:order-2"
+                  }`}
+                >
                   <Image
-                    src={group.image}
-                    className="object-cover w-full"
-                    width={300}
-                    height={300}
+                    src={product.image}
+                    className="lg:mx-auto object-cover"
+                    fill
                     alt=""
                   />
                 </div>
-
-                <div>
-                  <h3 className="text-2xl mt-5 font-bold">{group.title}</h3>
-                  <p className="mt-2">{group.description}</p>
-                </div>
-              </div>
+              </article>
             ))}
           </div>
-        </div>
-      </section>
+        </section>
 
-      <section>
-        <div className="container mx-auto px-6">
-          <div className="bg-[#1a0047] text-center mx-auto rounded-3xl pt-20 pb-5 px-4 bg-cover bg-no-repeat bg-center bg-[url('/pattern-mobile.png')] lg:bg-[url('/pattern.png')]">
-            <h2 className="text-4xl md:text-6xl font-bold text-white mt-16">
-              Be part of the future of trust
+        <section>
+          <div className="container mx-auto px-6">
+            <h2 className="text-4xl md:text-5xl text-center font-extrabold mb-4">
+              Swink is for everyone who needs trust
             </h2>
 
-            <p className="my-5 text-lg text-[#ffffffe3] md:w-2/3 lg:w-1/3 md:mx-auto">
-              Join our early community of builders, voters, and changemakers
-              shaping Swink from day one.
-            </p>
+            <div className="flex flex-col md:flex-row justify-around gap-8 lg:gap-7 my-10">
+              {groups.map((group, index) => (
+                <div key={index} className="flex-1">
+                  <div className="rounded-2xl overflow-hidden">
+                    <Image
+                      src={group.image}
+                      className="object-cover w-full"
+                      width={300}
+                      height={300}
+                      alt=""
+                    />
+                  </div>
 
-            <button className="py-3 px-10 text-white text-lg rounded-2xl bg-blue-600 font-medium mb-32">
-              Speak to us
-            </button>
-
-            <div className="hidden md:flex items-center justify-center gap-2">
-              <span className="uppercase text-white font-semibold tracking-[3px]">
-                Trusted by
-              </span>
-
-              <Image
-                src="/web3nigeria - light.svg"
-                width={80}
-                height={80}
-                alt=""
-              />
+                  <div>
+                    <h3 className="text-2xl mt-5 font-bold">{group.title}</h3>
+                    <p className="mt-2">{group.description}</p>
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
-        </div>
-      </section>
-    </main>
+        </section>
+
+        <section>
+          <div className="container mx-auto px-6">
+            <div className="bg-[#1a0047] text-center mx-auto rounded-3xl pt-20 pb-5 px-4 bg-cover bg-no-repeat bg-center bg-[url('/pattern-mobile.png')] lg:bg-[url('/pattern.png')]">
+              <h2 className="text-4xl md:text-6xl font-bold text-white mt-16">
+                Be part of the future of trust
+              </h2>
+
+              <p className="my-5 text-lg text-[#ffffffe3] md:w-2/3 lg:w-1/3 md:mx-auto">
+                Join our early community of builders, voters, and changemakers
+                shaping Swink from day one.
+              </p>
+
+              <button className="py-3 px-10 text-white text-lg rounded-2xl bg-blue-600 font-medium mb-32">
+                Speak to us
+              </button>
+
+              <div className="hidden md:flex items-center justify-center gap-2">
+                <span className="uppercase text-white font-semibold tracking-[3px]">
+                  Trusted by
+                </span>
+
+                <Image
+                  src="/web3nigeria - light.svg"
+                  width={80}
+                  height={80}
+                  alt=""
+                />
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      <Modal showModal={showModal} onClose={handleClose} />
+    </>
   );
 }
