@@ -123,7 +123,7 @@ export default function Page() {
             </div>
           </div>
 
-          <div className="relative">
+          <div className="relative hidden md:block">
             <div className="h-[200px] xl:min-h-[250px]">
               <Image
                 src="/features.png"
@@ -133,6 +133,14 @@ export default function Page() {
               />
             </div>
           </div>
+
+          <Image
+            src="/features (mobile).png"
+            className="w-full object-cover md:hidden"
+            width={1000}
+            height={200}
+            alt="Image showing swink features"
+          />
         </section>
 
         <section>
