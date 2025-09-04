@@ -11,3 +11,20 @@
     @apply mt-32;
   }
 }
+
+.hero-section {
+  @apply bg-[url(/hero-bg.png)] bg-no-repeat bg-contain;
+  background-position-y: 70%;
+}
+
+@media (min-width: 768px) {
+  .hero-section {
+    background-position-y: 105px;
+  }
+}
+
+@media (min-width: 1028px) {
+  .hero-section {
+    background-position: center;
+  }
+}
