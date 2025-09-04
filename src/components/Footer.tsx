@@ -28,23 +28,35 @@ const Footer = () => {
                 </div>
               </Link>
 
-              <Link href="">
+              <a
+                href="https://x.com/swinkprotocol"
+                target="_blank"
+                rel="noopener"
+              >
                 <div className="bg-white p-3 rounded-xl flex items-center justify-center">
                   <Image src="/x.svg" width={25} height={25} alt="" />
                 </div>
-              </Link>
+              </a>
 
-              <Link href="">
+              <a
+                href="https://t.me/swinkprotocol"
+                target="_blank"
+                rel="noopener"
+              >
                 <div className="bg-white p-3 rounded-xl flex items-center justify-center">
                   <Image src="/telegram.svg" width={25} height={25} alt="" />
                 </div>
-              </Link>
+              </a>
 
-              <Link href="">
+              <a
+                href="https://www.linkedin.com/company/swinkprotocol"
+                target="_blank"
+                rel="noopener"
+              >
                 <div className="bg-white p-3 rounded-xl flex items-center justify-center">
                   <Image src="/linkedin.svg" width={25} height={25} alt="" />
                 </div>
-              </Link>
+              </a>
             </div>
           </div>
         </div>
