@@ -22,12 +22,6 @@ const Footer = () => {
             </div>
 
             <div className="social-profiles flex mt-8 gap-3">
-              <Link href="">
-                <div className="bg-white p-3 rounded-xl flex items-center justify-center">
-                  <Image src="/mail.svg" width={25} height={25} alt="" />
-                </div>
-              </Link>
-
               <a
                 href="https://x.com/swinkprotocol"
                 target="_blank"
