@@ -180,7 +180,7 @@ export default function Page() {
           </div>
         </section>
 
-        <section>
+        <section id="core">
           <h2 className="text-4xl md:text-5xl text-center font-extrabold mb-4">
             Core Products
           </h2>

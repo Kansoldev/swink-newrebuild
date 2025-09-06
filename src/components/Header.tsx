@@ -12,9 +12,9 @@ const Header = () => {
         </div>
 
         <nav className="flex items-center md:gap-5">
-          <Link href="#" className="md:mr-7 font-medium">
+          <a href="#core" className="md:mr-7 font-medium">
             Swink's Products
-          </Link>
+          </a>
 
           <a href="https://x.com/swinkprotocol" target="_blank" rel="noopener">
             <Image
