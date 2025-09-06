@@ -16,17 +16,7 @@ const Header = () => {
             Swink's Products
           </Link>
 
-          <a href="#">
-            <Image
-              src="/mail-2.svg"
-              width={30}
-              height={30}
-              className="hidden md:block object-cover"
-              alt=""
-            />
-          </a>
-
-          <a href="#">
+          <a href="https://x.com/swinkprotocol" target="_blank" rel="noopener">
             <Image
               src="/twitter.svg"
               width={30}
