@@ -1,8 +1,9 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { useState, FormEvent, ChangeEvent } from "react";
 import Modal from "@/components/ui/Modal";
+import GenerateSwinkID from "@/components/GenerateSwinkID";
 
 const features = [
   {
@@ -79,6 +80,16 @@ const groups = [
 
 export default function Page() {
   const [showModal, setShowModal] = useState(false);
+  const [generateIDModal, setGenerateIDModal] = useState(false);
+  const [currentStep, setCurrentStep] = useState(1);
+  const [username, setUsername] = useState("");
+  const [formErrors, setFormErrors] = useState({
+    username: "",
+  });
+
+  function handleNextStep(step: number) {
+    setCurrentStep(step);
+  }
 
   function handleOpen() {
     setShowModal(true);
@@ -86,6 +97,45 @@ export default function Page() {
 
   function handleClose() {
     setShowModal(false);
+  }
+
+  function handleOpenGenerateID() {
+    setGenerateIDModal(true);
+  }
+
+  function handleCloseGenerateID() {
+    setGenerateIDModal(false);
+  }
+
+  function validatePersonalInfo() {
+    const newErrors = { username: "" };
+    let isValid = true;
+
+    if (username === "") {
+      newErrors.username = "Enter a unique username";
+      isValid = false;
+    }
+
+    setFormErrors(newErrors);
+    return isValid;
+  }
+
+  function handleUpdateUsername(e: ChangeEvent<HTMLInputElement>) {
+    setUsername(e.target.value);
+  }
+
+  function handleSubmit(e: FormEvent) {
+    e.preventDefault();
+
+    if (validatePersonalInfo()) {
+      handleNextStep(2);
+    }
+  }
+
+  function handleFormReset() {
+    setUsername("");
+    handleNextStep(1);
+    handleCloseGenerateID();
   }
 
   return (
@@ -219,6 +269,12 @@ export default function Page() {
                         ? "bg-[#bbb3c7]"
                         : "bg-blue-600"
                     }`}
+                    onClick={
+                      product.buttonText == "Claim Swink ID"
+                        ? handleOpenGenerateID
+                        : () => false
+                    }
+                    disabled={product.buttonText == "Coming Soon"}
                   >
                     {product.buttonText}
                   </button>
@@ -307,6 +363,16 @@ export default function Page() {
       </main>
 
       <Modal showModal={showModal} onClose={handleClose} />
+      <GenerateSwinkID
+        username={username}
+        currentStep={currentStep}
+        generateIDModal={generateIDModal}
+        formErrors={formErrors}
+        onClose={handleCloseGenerateID}
+        onSubmit={handleSubmit}
+        onReset={handleFormReset}
+        onUpdate={handleUpdateUsername}
+      />
     </>
   );
 }
