@@ -6,7 +6,7 @@ const Footer = () => {
     <footer className="mt-16">
       <div className="container mx-auto px-6">
         <div className="flex flex-col lg:flex-row items-center lg:items-end justify-between lg:gap-10">
-          <div className="w-[1000px] max-w-full h-[300px] relative">
+          <div className="w-[1000px] max-w-full h-[300px] relative -z-10">
             <Image
               src="/footer-logo.svg"
               className="object-contain"
